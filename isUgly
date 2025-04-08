@@ -1,0 +1,38 @@
+class Solution {
+    public boolean isUgly(int n) {
+        int mod2=n%2;
+        int mod3=n%3;
+        int mod5=n%5;
+        if(n==1 ){
+                return true;
+        }
+
+        else if(mod2==0 || mod3==0 || mod5==0){
+
+                int product1=2*3;
+                int product2=2*5;
+                int product3=3*5;
+                int product4=2*3*5;
+
+                if(product1==n){
+                        return true;
+                }
+
+                else if(product2==n){
+                    return true;
+                }
+
+                else if(product3==n){
+                    return true;
+                }
+
+                 else if(product4==n){
+                    return true;
+                }
+        }
+        
+        
+    return false;
+                                                                                        
+    }
+}
