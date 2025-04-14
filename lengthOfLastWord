@@ -1,0 +1,14 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+      // trim spaces
+      String trimmed_str=s.trim();
+      //split with " "  
+        String[] str_ls=trimmed_str.split(" ");
+      //get lengthof the array
+       int len= str_ls.length;
+      //get the length of the string
+        int len_wrd=(str_ls[len-1]).length();
+
+        return len_wrd;
+    }
+}
