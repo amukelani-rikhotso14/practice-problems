@@ -1,0 +1,46 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        //get length of the list
+        int len=strs.length;
+        //default the first elemet as the prefix
+       
+        
+        int minLength=minimumLength(strs);
+        
+
+        StringBuilder sb=new StringBuilder();
+
+            
+        for(int i=0;i<minLength;i++){
+                    
+            char c=strs[0].charAt(i) ;
+      
+             for(int k=1;k<len;k++){
+                if(strs[k].charAt(i) != c ){
+                    break;
+                }
+
+                sb.append(c);
+
+            }
+            
+        }
+        return sb.toString();
+         
+        //check the new prefix against the last one
+
+    }
+   
+
+   public int minimumLength(String[] strs){
+    //loop through lkst and get the element with the least length
+        int minLen = strs[0].length();
+        for(int j=1;j<strs.length;j++){
+            
+                minLen= Math.min(minLen,strs[j].length());
+        }
+        return minLen;
+    }
+        
+}
+
