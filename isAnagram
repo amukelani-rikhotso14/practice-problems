@@ -1,0 +1,37 @@
+import java.util.Arrays;
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        HashMap<Character, Integer> Map1 = new HashMap<>();
+        HashMap<Character, Integer> Map2 = new HashMap<>();
+
+        int len1= s.length();
+        int len2 = t.length();
+        if(len1 == len2){
+            for(int i=0; i < len1; i++){
+                Map1.put(s.charAt(i),Map1.getOrDefault(i,0)+1);
+
+            }
+            for(int j=0; j < len2; j++){
+                Map2.put(t.charAt(j),Map2.getOrDefault(j,0)+1);
+
+            }
+
+            for(char c : Map1.keySet()){
+                
+                int freq=Map1.get(c);
+            
+                if( Map2.getOrDefault(c,0) != freq){
+                   return false;
+                }
+
+            }
+            System.out.println(Map1);
+            System.out.println(Map2);
+        return true;
+        }
+
+        else{
+            return false;
+        }
+  }
+}
