@@ -1,0 +1,49 @@
+class Solution {
+    public boolean isValid(String s) {
+        int len=s.length();
+        if(len % 2 != 0){
+            return false;
+        }
+
+        else{
+            HashMap<Character,Integer> map =new HashMap<>();
+            for(int i=0;i<len;i++){
+                char c=s.charAt(i);
+                map.put(c,i);
+            }
+
+            int j = map.getOrDefault('(',0);
+            if(j != 0){
+                int k=map.getOrDefault(')',0);
+                if (k != 0){
+                    if(k > j){
+                        return true;
+                    }
+                }
+            }
+
+            int l = map.getOrDefault('[',0);
+            if(l != 0){
+                int m=map.getOrDefault(']',0);
+                if (m != 0){
+                    if(m > l){
+                        return true;
+                    }
+                }
+            }
+
+            int g = map.getOrDefault('{',0);
+            if(g != 0){
+                int h=map.getOrDefault('}',0);
+                if (h != 0){
+                    if(h > g){
+                        return true;
+                    }
+                }
+            }
+
+
+        }
+        return false;
+    }
+}
