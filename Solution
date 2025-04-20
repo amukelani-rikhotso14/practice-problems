@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String h[]= s.split(";");
+        String operation=h[0];
+        String method=h[1];
+        String words=h[2];
+        String camel="";
+        int len=words.length();
+        if(operation.equals("S")){
+            if(method.equals("M")){
+                String word=words.substring(0,len-2);
+                int l=word.length();
+                for(int i=0;i<len;i++){
+                    if(Character.isUpperCase(word.charAt(i))){
+                        camel=(word.substring(0,i)).toLowerCase()+" "+word.substring(i).toLowerCase();
+                     }
+                }
+            }
+            
+            else if(method.equals("C") || method.equals("V")){
+                int l2=words.length();
+                for(int k=0;k<l2;k++){
+                    if(Character.isUpperCase(word.charAt(i))){
+                        camel=(word.substring(0,i)).toLowerCase()+" "+word.substring(i).toLowerCase();
+                     }
+                }
+            }
+        
+        }
+        
+    }
+        
+    }
+}
