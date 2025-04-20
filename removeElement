@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int l=nums.length;
+        int i=0;
+
+        for(int k=0;k<l;k++){
+            if(nums[k] != val){
+                nums[i] =nums[k];
+                i++;
+            }
+        }
+        return i;
+    }
+}
